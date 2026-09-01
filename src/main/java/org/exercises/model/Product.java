@@ -3,7 +3,7 @@ package org.exercises.model;
 import java.util.*;
 
 public class Product {
-    private Long id;
+    private final Long id;
     private String title;
     private double price;
 
@@ -15,10 +15,6 @@ public class Product {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {

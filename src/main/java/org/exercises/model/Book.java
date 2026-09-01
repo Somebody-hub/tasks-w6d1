@@ -3,7 +3,7 @@ package org.exercises.model;
 import java.util.Objects;
 
 public class Book {
-    private Long id;
+    private final Long id;
     private String title;
     private String author;
     private boolean isRead;
@@ -27,10 +27,6 @@ public class Book {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getTitle() {

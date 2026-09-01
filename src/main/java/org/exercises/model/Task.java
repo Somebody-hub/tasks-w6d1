@@ -4,7 +4,7 @@ package org.exercises.model;
 import java.util.Objects;
 
 public class Task {
-    private Long id;
+    private final Long id;
     private String text;
     private TaskStatus status;
     private boolean deleted;
@@ -26,10 +26,6 @@ public class Task {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getText() {
