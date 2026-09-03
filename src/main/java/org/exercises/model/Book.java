@@ -3,30 +3,19 @@ package org.exercises.model;
 import java.util.Objects;
 
 public class Book {
-    private final Long id;
     private String title;
     private String author;
     private boolean isRead;
-    private boolean deleted;
 
-    public Book(Long id, String title, String author, boolean isRead) {
-        this.id = id;
+
+    public Book(String title, String author, boolean isRead) {
         this.title = title;
         this.author = author;
         this.isRead = isRead;
-        this.deleted = false;
     }
 
-    public Book(Long id) {
-        this(id, "", "", false);
-    }
-
-    public Book(Long id, String title, String author) {
-        this(id, title, author, false);
-    }
-
-    public Long getId() {
-        return id;
+    public Book(String title, String author) {
+        this(title, author, false);
     }
 
     public String getTitle() {
@@ -51,28 +40,6 @@ public class Book {
 
     public void setIsRead(boolean isRead) {
         this.isRead = isRead;
-    }
-
-    public boolean isDeleted() {
-        return !deleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
-    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return id != null && Objects.equals(id, book.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
     }
 
     @Override

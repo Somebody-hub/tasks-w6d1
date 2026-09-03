@@ -7,26 +7,17 @@ public class Task {
     private final Long id;
     private String text;
     private TaskStatus status;
-    private boolean deleted;
 
-    public Task(Long id, String text, TaskStatus taskStatus) {
+    public Task(Long id, String text, TaskStatus status) {
         this.id = id;
         this.text = text;
-        this.status = taskStatus;
-        this.deleted = false;
-    }
-
-    public Task(Long id, String text) {
-        this(id, text, TaskStatus.NEW);
-    }
-
-    public Task(Long id) {
-        this(id, "", TaskStatus.NEW);
+        this.status = status;
     }
 
     public Long getId() {
         return id;
     }
+
 
     public String getText() {
         return text;
@@ -44,28 +35,9 @@ public class Task {
         this.status = status;
     }
 
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return Objects.equals(id, task.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 
     @Override
     public String toString() {
-        return "Task: " +id + " " + text + " " + status;
+        return "Task: " + " " + text + " " + status;
     }
 }

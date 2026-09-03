@@ -11,10 +11,10 @@ public class Main {
         BookService bookService = new BookService();
         List<Book> TanenbaumBooks = new LinkedList<>();
 
-        Book b1 = new Book(0L, "Structured Computer Organization", "Andrew Stuart Tanenbaum");
-        Book b2 = new Book(2L, "The Art Of Computer Programming", "Donald Knuth");
-        Book b3 = new Book(1L, "Core Java", "Key Horstmann");
-        Book b4 = new Book(3L, "Modern Operating Systems", "Andrew Stuart Tanenbaum");
+        Book b1 = new Book("Structured Computer Organization", "Andrew Stuart Tanenbaum");
+        Book b2 = new Book("The Art Of Computer Programming", "Donald Knuth");
+        Book b3 = new Book("Core Java", "Key Horstmann");
+        Book b4 = new Book("Modern Operating Systems", "Andrew Stuart Tanenbaum");
         bookService.showBookList(bookList);
         //AddBook
         bookService.addBook(bookList, b1);
@@ -35,9 +35,9 @@ public class Main {
         List<Task> taskList = new ArrayList<>();
         TaskService taskService = new TaskService();
 
-        Task t1 = new Task(0L, "Buy milk");
-        Task t2 = new Task(1L, "Do homework");
-        Task t3 = new Task(2L, "Read book");
+        Task t1 = new Task(0L, "Buy milk", TaskStatus.NEW);
+        Task t2 = new Task(1L, "Do homework", TaskStatus.NEW);
+        Task t3 = new Task(2L, "Read book", TaskStatus.NEW);
         //Add task
         taskService.addTask(taskList, t1);
         taskService.addTask(taskList, t2);
@@ -53,9 +53,9 @@ public class Main {
         List<Product> productList = new ArrayList<>();
         ProductService productService = new ProductService();
 
-        Product p1 = new Product(0L, "Milk", 1.49);
-        Product p2 = new Product(1L, "Bread", 0.49);
-        Product p3 = new Product(2L, "Water", 0.99);
+        Product p1 = new Product("Milk", 1.49);
+        Product p2 = new Product("Bread", 0.49);
+        Product p3 = new Product("Water", 0.99);
 
         productService.addProduct(productList, p1);
         productService.addProduct(productList, p2);
@@ -69,9 +69,9 @@ public class Main {
         List<Student> studentList = new ArrayList<>();
         StudentService studentService = new StudentService();
 
-        Student s1 = new Student(0L, "Alice", 4.24);
-        Student s2 = new Student(1L, "Nick", 3.59);
-        Student s3 = new Student(2L, "Bob", 4.71);
+        Student s1 = new Student("Alice", 4.24);
+        Student s2 = new Student("Nick", 3.59);
+        Student s3 = new Student("Bob", 4.71);
 
         studentService.addStudent(studentList, s1);
         studentService.addStudent(studentList, s2);

@@ -13,10 +13,8 @@ public class TaskService {
         System.out.println("==Task List==");
         int c = 0;
         for (Task task : allTasks) {
-            if (!task.isDeleted()) {
                 c++;
                 System.out.println(task);
-            }
         }
         if (c == 0) {
             System.out.println("EMPTY");
@@ -33,22 +31,13 @@ public class TaskService {
             return Optional.empty();
         }
         for (Task task : allTasks) {
-            if (task.getId() == id && !task.isDeleted()) {
+            if (task.getId() == id) {
                 return Optional.of(task);
             }
         }
         return Optional.empty();
     }
 
-    public void deleteTaskById(List<Task> allTasks, int id) {
-        Optional<Task> foundTask = findTaskById(allTasks, id);
-        if (foundTask.isEmpty()) {
-            System.out.println("Task not found");
-        } else {
-            foundTask.get().setDeleted(true);
-            System.out.println("Status deleted");
-        }
-    }
 
     public void changeTaskStatus(List<Task> allTasks, int id, TaskStatus taskStatus) {
         Optional<Task> foundTask = findTaskById(allTasks, id);
@@ -62,7 +51,7 @@ public class TaskService {
 
     public void showActiveTasks (List<Task> allTasks) {
         for (Task task: allTasks) {
-            if((task.getStatus() == TaskStatus.ACTIVE) && !task.isDeleted()) {
+            if((task.getStatus() == TaskStatus.ACTIVE)) {
                 System.out.println(task);
             }
         }

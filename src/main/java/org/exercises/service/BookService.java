@@ -11,10 +11,9 @@ public class BookService {
         System.out.println("==Book List==");
         int c = 0;
         for (Book book : allBooks) {
-            if (book.isDeleted()) {
                 c++;
                 System.out.println(book);
-            }
+
         }
         if (c == 0) {
             System.out.println("EMPTY");
@@ -26,7 +25,7 @@ public class BookService {
             return Optional.empty();
         }
         for (Book book : allBooks) {
-            if (book.getTitle().equalsIgnoreCase(title) && book.isDeleted()) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
                 return Optional.of(book);
             }
         }
@@ -39,19 +38,10 @@ public class BookService {
         System.out.println("Book added: " + newBook);
     }
 
-    public void deleteBookByTitle(List<Book> allBooks, String title) {
-        Optional<Book> bookOpt = findBookByTitle(allBooks, title);
-        if (bookOpt.isEmpty()) {
-            System.out.println("Book not found");
-        } else {
-            bookOpt.get().setDeleted(true);
-            System.out.println("Book deleted");
-        }
-    }
 
     public List<Book> findBooksByAuthor(List<Book> allBooks, String author) {
         List<Book> foundBooks = allBooks.stream()
-                .filter(book -> book.getAuthor().equalsIgnoreCase(author) && book.isDeleted())
+                .filter(book -> book.getAuthor().equalsIgnoreCase(author))
                 .collect(Collectors.toList());
 
         int count = foundBooks.size();
@@ -75,7 +65,7 @@ public class BookService {
         List<Book> readBooks = new ArrayList<>();
         int c = 0;
         for (Book book : allBooks) {
-            if (!book.getIsRead() && book.isDeleted()) {
+            if (!book.getIsRead()) {
                 readBooks.add(book);
                 c++;
             }
