@@ -65,7 +65,7 @@ public class BookService {
         List<Book> readBooks = new ArrayList<>();
         int c = 0;
         for (Book book : allBooks) {
-            if (!book.getIsRead()) {
+            if (book.getIsRead()) {
                 readBooks.add(book);
                 c++;
             }
