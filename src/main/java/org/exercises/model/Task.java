@@ -1,16 +1,14 @@
 package org.exercises.model;
 
 
-import java.util.Objects;
-
 public class Task {
     private final Long id;
-    private String text;
+    private String title;
     private TaskStatus status;
 
-    public Task(Long id, String text, TaskStatus status) {
+    public Task(Long id, String title, TaskStatus status) {
         this.id = id;
-        this.text = text;
+        this.title = title;
         this.status = status;
     }
 
@@ -19,12 +17,12 @@ public class Task {
     }
 
 
-    public String getText() {
-        return text;
+    public String getTitle() {
+        return title;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public TaskStatus getStatus() {
@@ -38,6 +36,6 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task: " + " " + text + " " + status;
+        return "Task: " + " " + title + " " + status;
     }
 }
