@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         List<Book> bookList = new ArrayList<>();
         BookService bookService = new BookService();
-        List<Book> TanenbaumBooks = new LinkedList<>();
+
 
         Book b1 = new Book("Structured Computer Organization", "Andrew Stuart Tanenbaum");
         Book b2 = new Book("The Art Of Computer Programming", "Donald Knuth");
@@ -24,8 +24,6 @@ public class Main {
         bookService.showBookList(bookList);
         //FindByAuthor
         bookService.findBooksByAuthor(bookList, "Alexandr Pushkin");
-        TanenbaumBooks = bookService.findBooksByAuthor(bookList, "Andrew Stuart Tanenbaum");
-        bookService.showBookList(TanenbaumBooks);
         //CountRead
         bookService.markAsReadByTitle(bookList, "Core Java");
         bookService.markAsReadByTitle(bookList, "The Art Of Computer Programming");
