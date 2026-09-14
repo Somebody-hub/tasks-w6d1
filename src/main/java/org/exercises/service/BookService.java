@@ -45,7 +45,7 @@ public class BookService {
                 .collect(Collectors.toList());
 
         int count = foundBooks.size();
-        System.out.println("Found " + count + " book" + (count > 1 ? "s" : "") + " by " + author);
+        System.out.println("Found " + count + " book" + (count == 1 ? "" : "s") + " by " + author);
 
         return foundBooks;
     }
@@ -74,7 +74,7 @@ public class BookService {
             System.out.println("No read books");
             return readBooks;
         }
-        System.out.println("Found " + c + " read book" + ((c > 1) ? "s" : ""));
+        System.out.println("Found " + c + " read book" + ((c == 1) ? "" : "s"));
         return readBooks;
     }
 
