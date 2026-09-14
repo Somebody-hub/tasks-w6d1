@@ -33,9 +33,9 @@ public class Main {
         List<Task> taskList = new ArrayList<>();
         TaskService taskService = new TaskService();
 
-        Task t1 = new Task(0L, "Buy milk", TaskStatus.NEW);
-        Task t2 = new Task(1L, "Do homework", TaskStatus.NEW);
-        Task t3 = new Task(2L, "Read book", TaskStatus.NEW);
+        Task t1 = new Task(0, "Buy milk", TaskStatus.NEW);
+        Task t2 = new Task(1, "Do homework", TaskStatus.NEW);
+        Task t3 = new Task(2, "Read book", TaskStatus.NEW);
         //Add task
         taskService.addTask(taskList, t1);
         taskService.addTask(taskList, t2);
